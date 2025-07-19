@@ -8,8 +8,10 @@ import {addDoc,
         getFirestore } from "firebase/firestore";
 import { toast } from "react-toastify";
 
+const VITE_FIREBASE_APIKEY = import.meta.env.VITE_FIREBASE_APIKEY;
+
 const firebaseConfig = {
-  apiKey: "AIzaSyDynWIcwAoiY9ANF_C1dd9UoAXvjfyveLg",
+  apiKey : VITE_FIREBASE_APIKEY,
   authDomain: "netflix-clone-db824.firebaseapp.com",
   projectId: "netflix-clone-db824",
   storageBucket: "netflix-clone-db824.appspot.com",

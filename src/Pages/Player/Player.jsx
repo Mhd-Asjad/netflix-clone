@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './Player.css';
 
+const VITE_TMDB_API = import.meta.env.VITE_TMDB_API
+
 const Player = ({ videoId, closeModal }) => {
   const [videoData, setVideoData] = useState(null);
 
@@ -13,7 +15,7 @@ const Player = ({ videoId, closeModal }) => {
         const options = {
           headers: {
             accept: 'application/json',
-            Authorization: `Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5ODExYWI5MTExYWRlZWMxN2UyMzk0Zjg1OTE3OTM4YiIsIm5iZiI6MTcyNTc3NTE5NS40NDMzOCwic3ViIjoiNjZkZDNiNDM1NGFmMGUxNzBlMzhiZTFlIiwic2NvcGVzIjpbImFwaV9yZWFkIl0sInZlcnNpb24iOjF9.lyJfiRnaLtIqCuVgBQ8HjcaMKBxWVd-gxLKsceRSGU0`, // Use environment variable
+            Authorization: `Bearer ${VITE_TMDB_API}`
           },
         };
 

@@ -2,6 +2,7 @@ import React ,{useEffect, useRef, useState} from 'react'
 import axios from 'axios';
 import './TitleCard.css'
 
+const VITE_TMDB_API = import.meta.env.VITE_TMDB_API
 
 const TitleCard = ({title , category , handleCardClick }) => {
 
@@ -23,7 +24,7 @@ const TitleCard = ({title , category , handleCardClick }) => {
           method :'GET',
           headers: {
             accept: 'application/json',
-            Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5ODExYWI5MTExYWRlZWMxN2UyMzk0Zjg1OTE3OTM4YiIsIm5iZiI6MTcyNTc3NTE5NS40NDMzOCwic3ViIjoiNjZkZDNiNDM1NGFmMGUxNzBlMzhiZTFlIiwic2NvcGVzIjpbImFwaV9yZWFkIl0sInZlcnNpb24iOjF9.lyJfiRnaLtIqCuVgBQ8HjcaMKBxWVd-gxLKsceRSGU0',
+            Authorization: `Bearer ${VITE_TMDB_API}` 
           },
         };
 
